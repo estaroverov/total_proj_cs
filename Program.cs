@@ -32,3 +32,17 @@ int CalcSumNumbers(int from, int end)
 }
 Console.WriteLine();
 Console.WriteLine("sum = " + CalcSumNumbers(1, 15));
+
+// Напишите программу вычисления функции Аккермана с помощью рекурсии. 
+// Даны два неотрицательных числа m и n. С помощью рекурсии!!!
+int AccermanFunc(int m, int n)
+{
+    if (m > 0 && n > 0)
+        return AccermanFunc(m - 1, AccermanFunc(m, n - 1));
+    if (m > 0 && n == 0)
+        return AccermanFunc(m - 1, 1);
+    if (m == 0)
+        return n + 1;
+    return 0;
+}
+Console.WriteLine(AccermanFunc(3, 2));
